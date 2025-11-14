@@ -1,0 +1,29 @@
+@startuml
+title Simple Plane Class Diagram
+
+class Plane {
+    -currentState : PlaneState
+    +exitHangar()
+    +enterHangar()
+    +takeOff()
+    +land()
+}
+
+interface PlaneState {
+    +exitHangar()
+    +enterHangar()
+    +takeOff()
+    +land()
+}
+
+class InHangar
+class OnRunway
+class InAir
+
+PlaneState --> InHangar
+PlaneState --> OnRunway
+PlaneState --> InAir
+
+Plane *--> PlaneState
+
+@enduml

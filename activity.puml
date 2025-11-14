@@ -1,0 +1,20 @@
+@startuml
+title Simple Plane State Diagram
+
+skinparam state {
+  LineCurved false
+  RoundCorner 5
+}
+
+[*] --> InHangar
+
+
+InHangar --> [*]
+
+InHangar --> OnRunway : exitHangar
+OnRunway --> InHangar : enterHangar
+
+OnRunway --> InAir : takeOff
+InAir --> OnRunway : land
+
+@enduml
